@@ -180,6 +180,39 @@ export default function Availability() {
                             </p>
                         </div>
 
+                        {/* Extrator de Token via URL (New Tool) */}
+                        <div className="mb-8 p-6 bg-white/5 border border-white/10 rounded-xl">
+                            <h3 className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">Extrator de Token</h3>
+                            <p className="text-[9px] text-white/40 uppercase mb-4 leading-relaxed">
+                                Se a página de login fechou sozinha, cole aqui o link completo da barra de endereços:
+                            </p>
+                            <input
+                                type="text"
+                                placeholder="Cole a URL do Google aqui..."
+                                className="w-full bg-black/50 border border-white/10 p-3 text-white text-[10px] mb-3 outline-none focus:border-primary"
+                                onChange={async (e) => {
+                                    const url = e.target.value;
+                                    if (url.includes('code=')) {
+                                        const code = new URL(url).searchParams.get('code');
+                                        if (code) {
+                                            try {
+                                                toast.loading('Gerando Refresh Token...');
+                                                const res = await api.post('/auth/google/exchange', { code });
+                                                // Mostra o token gerado para cópia
+                                                alert(`TOKEN GERADO COM SUCESSO!\n\nCopie este código para a Railway:\n\n${res.data.refresh_token}`);
+                                                toast.success('Token Extraído!');
+                                            } catch (err: any) {
+                                                toast.error('Erro ao extrair token. Código expirado?');
+                                            }
+                                        }
+                                    }
+                                }}
+                            />
+                            <p className="text-[8px] text-white/20 uppercase font-bold italic">
+                                * O sistema detecta o código automaticamente ao colar a URL.
+                            </p>
+                        </div>
+
                         <div className="space-y-3">
                             {schedule.map((day, index) => (
                                 <div
