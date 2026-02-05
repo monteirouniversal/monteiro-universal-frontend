@@ -27,7 +27,7 @@ api.interceptors.response.use((response) => {
         localStorage.removeItem('mg_admin_user');
         window.location.href = '/auth/login';
     }
-    const message = error.response?.data?.message || 'Erro de conexão com o servidor.';
+    const message = error.response?.data?.message || error.response?.data?.error || 'Erro de ligação ao servidor.';
     console.error(`❌ [API Error]`, message);
     return Promise.reject(error);
 });
