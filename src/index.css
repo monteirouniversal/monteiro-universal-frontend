@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-foreground: #F8FAFC;
+  --color-primary: #D4AF37;
+  /* Kwanza Gold */
+  --color-primary-light: #F1D279;
+  --color-secondary: #111111;
+  --color-accent: #FFFFFF;
+  --color-acid-green: #A3E635;
+  --color-deep-charcoal: #0A0A0A;
+
+  --font-sans: "Inter", "SF Pro Display", "system-ui", "sans-serif";
+  --font-display: "SF Pro Display", "Inter", "system-ui", "sans-serif";
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white;
+    background-color: #050505;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.08), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.03), transparent 25%),
+      linear-gradient(to bottom, #050505, #0a0a0a);
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    scroll-behavior: smooth;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tighter;
+  }
+}
+
+@layer components {
+
+  /* Botão Padrão Monteiro Elite */
+  .btn-elite {
+    @apply relative inline-flex items-center justify-center px-10 py-5 font-black text-xs uppercase tracking-[0.2em] transition-all duration-500 overflow-hidden;
+    /* Efeito de borda luminosa */
+    @apply border border-white/10 hover:border-primary/50;
+  }
+
+  .btn-elite::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full transition-transform duration-1000 skew-x-12;
+  }
+
+  .btn-elite:hover::before {
+    @apply translate-x-full;
+  }
+
+  .btn-elite-primary {
+    @apply bg-primary text-black border-none font-bold;
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+  }
+
+  .btn-elite-primary:hover {
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.4);
+  }
+
+  .btn-elite-secondary {
+    @apply bg-white/5 backdrop-blur-md text-white border-white/10 hover:bg-white/10 rounded-none;
+  }
+
+  /* Glassmorphism Puro */
+  .glass-card {
+    @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-2xl transition-all duration-700;
+    @apply hover:bg-white/[0.04] hover:border-primary/30;
+  }
+
+  /* Bento Grid Elite */
+  .bento-card {
+    @apply relative overflow-hidden rounded-none p-10 flex flex-col justify-between;
+    @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-md transition-all duration-700;
+    @apply hover:bg-white/[0.04] hover:border-primary/30 hover:-translate-y-2;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40;
+  }
+
+  /* Badge de Status */
+  .badge-elite {
+    @apply px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.1em] border backdrop-blur-md;
+  }
+}
+
+/* Utilitários Visuais */
+.bg-mesh {
+  background-image: radial-gradient(at 0% 0%, hsla(43, 67%, 20%, 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(43, 67%, 30%, 0.05) 0, transparent 50%);
+}
+
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 hover:bg-primary transition-colors;
+}
