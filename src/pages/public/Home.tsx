@@ -51,6 +51,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover opacity-60 scale-105"
               style={{ filter: 'brightness(0.6) contrast(1.2)' }}
             >
@@ -221,6 +222,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover opacity-80"
               style={{ filter: 'brightness(0.8) contrast(1.2)' }}
             >
@@ -300,6 +302,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover opacity-90"
               style={{ filter: 'brightness(0.7) contrast(1.1)' }}
             >

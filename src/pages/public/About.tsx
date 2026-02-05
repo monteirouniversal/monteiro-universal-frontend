@@ -287,6 +287,7 @@ export default function AboutPage() {
             loop
             muted
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover opacity-20"
             style={{ filter: 'brightness(0.5) contrast(1.2)' }}
           >
@@ -361,6 +362,7 @@ export default function AboutPage() {
             loop
             muted
             playsInline
+            preload="metadata"
             className="w-full h-full object-cover opacity-90"
             style={{ filter: 'brightness(0.7) contrast(1.1)' }}
           >
