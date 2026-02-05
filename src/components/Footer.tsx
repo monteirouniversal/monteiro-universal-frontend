@@ -135,13 +135,20 @@ export default function Footer() {
           <div>
             <h4 className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-8 border-l-2 border-white/10 pl-4">Institucional</h4>
             <ul className="space-y-4">
-              {['Sobre MG', 'A Nossa Equipa', 'Carreiras', 'Newsroom', 'Contacto Direto'].map((link) => (
+              {['Sobre MG', 'A Nossa Equipa', 'Carreiras', 'Newsroom', 'Contacto Direto', 'Portal Monteiro'].map((link) => (
                 <li key={link}>
                   <Link
-                    to={link === 'Sobre MG' ? '/sobre' : link === 'Contacto Direto' ? '/contacto' : '#'}
-                    className="text-[10px] font-bold text-white/40 uppercase tracking-widest hover:text-white flex items-center gap-2 group transition-all"
+                    to={
+                      link === 'Sobre MG' ? '/sobre' :
+                        link === 'Contacto Direto' ? '/contacto' :
+                          link === 'Portal Monteiro' ? '/auth/login' :
+                            '#'
+                    }
+                    className={`text-[10px] font-bold uppercase tracking-widest flex items-center gap-2 group transition-all ${link === 'Portal Monteiro' ? 'text-primary hover:text-white' : 'text-white/40 hover:text-white'
+                      }`}
                   >
-                    <ChevronRight className="w-3 h-3 text-white/40 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                    <ChevronRight className={`w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all ${link === 'Portal Monteiro' ? 'text-primary' : 'text-white/40'
+                      }`} />
                     {link}
                   </Link>
                 </li>
