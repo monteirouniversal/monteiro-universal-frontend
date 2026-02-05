@@ -160,6 +160,26 @@ export default function Availability() {
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white">Rotina Semanal Padrão</h2>
                         </div>
 
+                        {/* Google Connection Button */}
+                        <div className="mb-8 p-6 bg-blue-500/5 border border-blue-500/20 rounded-xl">
+                            <h3 className="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-2">Google Workspace</h3>
+                            <p className="text-[9px] text-white/40 uppercase mb-4 leading-relaxed">
+                                Necessário para sincronizar a agenda e enviar e-mails de confirmação automáticos.
+                            </p>
+                            <button
+                                onClick={() => window.open(`${import.meta.env.VITE_API_URL?.replace('/api', '')}/api/auth/google`, '_blank')}
+                                className="w-full py-3 bg-white text-black text-[10px] font-black uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all flex items-center justify-center gap-2"
+                            >
+                                <svg className="w-4 h-4" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M21.35 11.1h-9.17v2.73h6.51c-.33 1.56-1.56 2.73-3.21 2.73c-2.02 0-3.65-1.63-3.65-3.65c0-2.02 1.63-3.65 3.65-3.65c.88 0 1.68.32 2.3.84l2.13-2.13C18.25 6.44 15.65 5 12.18 5C8.11 5 4.82 8.29 4.82 12.36s3.29 7.36 7.36 7.36c4.07 0 7.36-3.29 7.36-7.36c0-.42-.04-.83-.11-1.23Z" />
+                                </svg>
+                                Conectar com Google
+                            </button>
+                            <p className="text-[8px] text-blue-400/50 mt-2 uppercase text-center font-bold">
+                                * Certifique-se de autorizar "Enviar e-mail" na próxima tela.
+                            </p>
+                        </div>
+
                         <div className="space-y-3">
                             {schedule.map((day, index) => (
                                 <div
