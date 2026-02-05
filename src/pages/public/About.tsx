@@ -18,7 +18,7 @@ const fadeIn = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: false, margin: "-50px", amount: 0.3 }, // once: false = anima toda vez
-  transition: { duration: 0.6, ease: "easeOut" }
+  transition: { duration: 0.6, ease: "easeOut" as const }
 };
 
 // Animação com delay - SE REPETE
@@ -26,7 +26,7 @@ const fadeInDelay = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: false, margin: "-50px", amount: 0.3 }, // once: false = anima toda vez
-  transition: { duration: 0.6, delay, ease: "easeOut" }
+  transition: { duration: 0.6, delay, ease: "easeOut" as const }
 });
 
 export default function AboutPage() {
@@ -35,19 +35,19 @@ export default function AboutPage() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
+      transition={{ duration: 0.5, ease: "easeInOut" as const }}
       className="relative bg-[#050505] text-white overflow-hidden selection:bg-[#D4AF37]/30"
     >
       {/* Background Effects - Suave */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div
           animate={{ opacity: [0.15, 0.25, 0.15] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" as const }}
           className="absolute top-[40%] -left-[10%] w-[800px] h-[800px] bg-blue-900/10 blur-[150px] rounded-full mix-blend-screen"
         />
         <motion.div
           animate={{ opacity: [0.1, 0.2, 0.1] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" as const, delay: 2 }}
           className="absolute bottom-0 right-[0%] w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full mix-blend-screen"
         />
       </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8, ease: "easeOut" as const }}
               className="inline-flex items-center gap-4 justify-center"
             >
               <div className="h-px w-12 bg-[#D4AF37]" />
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" as const }}
               className="text-6xl md:text-9xl font-serif text-white tracking-widest leading-none drop-shadow-2xl"
             >
               MONTEIRO
@@ -83,7 +83,7 @@ export default function AboutPage() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" as const }}
               className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-3xl mx-auto"
             >
               Tecnologia, sistemas e soluções digitais pensadas para negócios reais.
@@ -92,7 +92,7 @@ export default function AboutPage() {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" as const }}
               className="text-lg md:text-xl text-white/40 leading-relaxed max-w-3xl mx-auto font-light"
             >
               A Monteiro Universal nasce com o objetivo de ajudar pessoas, empresas e projetos a entrarem no mundo digital de forma profissional, segura e escalável.
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" as const }}
                 className="group relative p-8 bg-black/60 backdrop-blur-sm border border-[#D4AF37]/40 hover:border-[#D4AF37] transition-all duration-300 cursor-pointer"
               >
                 <div className="w-16 h-16 bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-all duration-300">
@@ -321,7 +321,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" as const }}
                 className="group flex items-start gap-6 p-8 bg-black/60 backdrop-blur-sm border border-[#D4AF37]/20 hover:border-[#D4AF37] hover:bg-black/80 transition-all duration-300 cursor-pointer"
               >
                 <div className="w-14 h-14 bg-[#D4AF37]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#D4AF37] transition-all duration-300">

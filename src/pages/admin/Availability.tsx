@@ -7,13 +7,12 @@ import {
     ChevronRight,
     Save,
     Loader2,
-    Check,
     X,
     AlertCircle
 } from 'lucide-react';
 import api from '../../services/api';
 import { toast } from 'sonner';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Availability() {
     const days = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
@@ -166,8 +165,8 @@ export default function Availability() {
                                 <div
                                     key={index}
                                     className={`group flex items-center gap-4 p-4 border transition-all duration-300 ${day.isActive
-                                            ? 'border-primary/20 bg-primary/[0.02] hover:bg-primary/[0.05]'
-                                            : 'border-white/5 bg-transparent opacity-50 hover:opacity-100'
+                                        ? 'border-primary/20 bg-primary/[0.02] hover:bg-primary/[0.05]'
+                                        : 'border-white/5 bg-transparent opacity-50 hover:opacity-100'
                                         }`}
                                 >
                                     {/* Toggle */}
