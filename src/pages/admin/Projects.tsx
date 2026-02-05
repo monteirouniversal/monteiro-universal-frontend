@@ -2,14 +2,11 @@ import { useState, useEffect } from 'react';
 import {
     Plus,
     Briefcase,
-    MapPin,
     Clock,
     MoreVertical,
     Loader2,
     X,
-    Layers,
-    CheckCircle2,
-    AlertTriangle
+    Layers
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '../../services/api';

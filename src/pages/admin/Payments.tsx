@@ -6,8 +6,6 @@ import {
   XCircle,
   Clock,
   Download,
-  ExternalLink,
-  ChevronDown,
   Loader2,
   RefreshCcw,
   FileText

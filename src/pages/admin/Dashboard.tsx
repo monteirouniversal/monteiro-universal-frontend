@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react';
-import { DollarSign, Users, Activity, ArrowUpRight, TrendingUp, Clock, AlertCircle, Download } from 'lucide-react';
+import { DollarSign, Users, ArrowUpRight, TrendingUp, Clock, AlertCircle, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
 import api from '../../services/api';

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Filter, Mail, Phone, Loader2, MessageSquare, Calendar } from 'lucide-react';
+import { Search, Filter, Mail, Phone, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '../../services/api';
 import { Helmet } from 'react-helmet-async';

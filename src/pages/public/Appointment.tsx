@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import AppointmentScheduler from '../../components/AppointmentScheduler';
-import { ShieldAlert, Info, Clock, CheckCircle } from 'lucide-react';
+import { ShieldAlert, Clock, CheckCircle } from 'lucide-react';
 
 export default function AppointmentPage() {
   return (
